@@ -54,7 +54,7 @@ export default function AddForm() {
                 onPress={() => { setTaskDone(item.id) }}
                 hitSlop={10}
             >
-                <Text style={item.done == "true" ? styles.taskDone : styles.taskNotDone}>{item.item}</Text>
+                <Text style={item.done == "true" ? styles.doneTask : styles.notDone}>{item.item}</Text>
             </Pressable>
         )
     }
@@ -107,38 +107,37 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     textInput: {
-        padding: 5,
+        padding: 10,
         borderWidth: 1,
-        width: '100%'
+        
     },
     saveButton: {
+        backgroundColor: 'grey',
+        width: 90,
+        height: 40,
         position: 'absolute',
-        alignSelf: 'center',
-        right: 20,
+        right: 50,
         paddingRight: 20,
         paddingTop: 2
     },
     saveButtonText: {
         color: 'blue',
-        fontSize: 24
+        fontSize: 24, 
+        marginLeft: 15, 
     },
-    listItem: {
-        padding: 5
-    },
-    lista: {
-        marginTop: 10
-    },
-    taskDone: {
+    doneTask: {
+        fontSize: 25,
+        margin: 10,
         textDecorationLine: 'line-through',
         textDecorationStyle: 'solid',
-        fontSize: 20,
-        margin: 10
+       
     },
-    taskNotDone: {
+    notDone: {
+        fontSize: 25,
+        margin: 10,
         textDecorationLine: 'none',
         textDecorationStyle: 'solid',
-        fontSize: 20,
-        margin: 10
+        
     },
    
 }); 
